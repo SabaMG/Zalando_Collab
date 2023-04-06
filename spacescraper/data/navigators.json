@@ -1,0 +1,193 @@
+[
+    {
+        "vendorSub": "",
+        "productSub": "20030107",
+        "vendor": "Google Inc.",
+        "maxTouchPoints": 0,
+        "userActivation": {},
+        "doNotTrack": null,
+        "geolocation": {},
+        "connection": {},
+        "plugins": {
+            "0": {
+                "0": {},
+                "1": {}
+            },
+            "1": {
+                "0": {},
+                "1": {}
+            },
+            "2": {
+                "0": {},
+                "1": {}
+            },
+            "3": {
+                "0": {},
+                "1": {}
+            },
+            "4": {
+                "0": {},
+                "1": {}
+            }
+        },
+        "mimeTypes": {
+            "0": {},
+            "1": {}
+        },
+        "pdfViewerEnabled": true,
+        "webkitTemporaryStorage": {},
+        "webkitPersistentStorage": {},
+        "hardwareConcurrency": 4,
+        "cookieEnabled": true,
+        "appCodeName": "Mozilla",
+        "appName": "Netscape",
+        "appVersion": "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.81 Safari/537.36",
+        "platform": "Win32",
+        "product": "Gecko",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.81 Safari/537.36",
+        "language": "de",
+        "languages": [
+            "de",
+            "de-DE",
+            "en-US",
+            "en"
+        ],
+        "onLine": true,
+        "webdriver": false,
+        "scheduling": {},
+        "bluetooth": {},
+        "clipboard": {},
+        "credentials": {},
+        "keyboard": {},
+        "managed": {},
+        "mediaDevices": {},
+        "storage": {},
+        "serviceWorker": {},
+        "wakeLock": {},
+        "deviceMemory": 8,
+        "ink": {},
+        "hid": {},
+        "locks": {},
+        "mediaCapabilities": {},
+        "mediaSession": {},
+        "permissions": {},
+        "presentation": {},
+        "serial": {},
+        "virtualKeyboard": {},
+        "usb": {},
+        "xr": {},
+        "userAgentData": {
+            "brands": [
+                {
+                    "brand": " Not A;Brand",
+                    "version": "99"
+                },
+                {
+                    "brand": "Chromium",
+                    "version": "98"
+                },
+                {
+                    "brand": "Google Chrome",
+                    "version": "98"
+                }
+            ],
+            "mobile": false
+        }
+    },
+    {
+        "sayswho": "Chrome 98",
+        "vendorSub": "",
+        "productSub": "20030107",
+        "vendor": "Google Inc.",
+        "maxTouchPoints": 0,
+        "userActivation": {},
+        "doNotTrack": null,
+        "geolocation": {},
+        "connection": {},
+        "plugins": {
+            "0": {
+                "0": {},
+                "1": {}
+            },
+            "1": {
+                "0": {},
+                "1": {}
+            },
+            "2": {
+                "0": {},
+                "1": {}
+            },
+            "3": {
+                "0": {},
+                "1": {}
+            },
+            "4": {
+                "0": {},
+                "1": {}
+            }
+        },
+        "mimeTypes": {
+            "0": {},
+            "1": {}
+        },
+        "pdfViewerEnabled": true,
+        "webkitTemporaryStorage": {},
+        "webkitPersistentStorage": {},
+        "hardwareConcurrency": 4,
+        "cookieEnabled": true,
+        "appCodeName": "Mozilla",
+        "appName": "Netscape",
+        "appVersion": "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36 Edg/98.0.1108.43",
+        "platform": "Win32",
+        "product": "Gecko",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36 Edg/98.0.1108.43",
+        "language": "tr",
+        "languages": [
+            "tr",
+            "en",
+            "en-GB",
+            "en-US"
+        ],
+        "onLine": true,
+        "webdriver": false,
+        "scheduling": {},
+        "bluetooth": {},
+        "clipboard": {},
+        "credentials": {},
+        "keyboard": {},
+        "managed": {},
+        "mediaDevices": {},
+        "storage": {},
+        "serviceWorker": {},
+        "wakeLock": {},
+        "deviceMemory": 8,
+        "ink": {},
+        "hid": {},
+        "locks": {},
+        "mediaCapabilities": {},
+        "mediaSession": {},
+        "permissions": {},
+        "presentation": {},
+        "serial": {},
+        "virtualKeyboard": {},
+        "usb": {},
+        "xr": {},
+        "userAgentData": {
+            "brands": [
+                {
+                    "brand": " Not A;Brand",
+                    "version": "99"
+                },
+                {
+                    "brand": "Chromium",
+                    "version": "98"
+                },
+                {
+                    "brand": "Microsoft Edge",
+                    "version": "98"
+                }
+            ],
+            "mobile": false
+        }
+    }
+]
