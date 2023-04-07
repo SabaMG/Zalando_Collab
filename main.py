@@ -5,3 +5,18 @@ task = {"profile":"test","URL":url, "payment_method": "cc","ACCOUNT_EMAIL":"maco
 
 zal = ZALANDO(task)
 
+zal.confirgutate(session=) # We need to check how do we create a session
+
+zal.utils()
+
+zal.prepare()
+
+zal.login()
+
+zal.clear_cart()
+
+#For the buying process
+zal.setUpProductPage() #Here we get the cookies of the page
+zal.exclusiveCarting() #Adding to cart the product
+zal.exclusiveConfirm() #Confirm and going to the checkout page
+zal.exclusiveBuyNow() #Get the Paypal link

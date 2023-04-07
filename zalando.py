@@ -875,6 +875,56 @@ class ZALANDO(object):
         else:
             return response
     
+    def setUpProductPage(self):
+        self.session.logger.warn("Adding To Cart [Exclusive]")
+
+        headers = {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "accept-encoding": "gzip, deflate, br",
+            "accept-language": "en-US,en;q=0.9,ko;q=0.8",
+            "cache-control": "max-age=0",
+            "referer": self.task["URL"],
+            "sec-ch-ua": self.sec_ch_ua,
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": f'"{self.platform}"',
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "same-origin",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1",
+            "user-agent": self.user_agent
+        }
+
+        while True:
+            response = self.session.post(
+                f"https://{self.domain}/api/graphql/exclusive-add-to-cart/",
+                headers=headers,
+                timeout=60
+            )
+
+            if response:
+                try:
+                    if '"exclusiveAddToCart": null' in response.text:
+                        self.session.logger.error("Error Adding To Cart [Exclusive]")
+                        time.sleep(getRetryDelay())
+                        continue
+
+                    elif "TOO_MANY_REQUESTS" in response.text:
+                        self.session.logger.error("Error Adding To Cart [Exclusive]")
+                        time.sleep(getRetryDelay())
+                        continue
+
+                    else:
+                        self.session.logger.success("Succesfully Added To Cart")
+
+                        self.titelbar("carts")
+
+                        return True
+                except:
+                    self.session.logger.error("Error Adding To Cart [Exclusive]")
+                    time.sleep(getRetryDelay())
+                    continue
+
     def exclusiveCarting(self):
         self.session.logger.warn("Adding To Cart [Exclusive]")
 
@@ -1044,6 +1094,7 @@ class ZALANDO(object):
                     else:
                         self.session.logger.success("Succesfully Bought [Exclusive]")
 
+                        print(response.content) #We are supposed to get the paypal link here
                         self.titelbar("carts")
 
                         return True
@@ -1165,5 +1216,3 @@ class ZALANDO(object):
                     self.session.logger.error("Error Monitoring Product")
                     time.sleep(getRetryDelay())
                     continue
-
-                    
