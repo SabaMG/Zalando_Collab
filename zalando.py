@@ -1019,26 +1019,24 @@ class ZALANDO(object):
 
             if response:
                 try:
-                    if '"exclusiveAddToCart": null' in response.text:
-                        self.session.logger.error("Error Confirmation [Exclusive]")
-                        time.sleep(getRetryDelay())
-                        continue
-
-                    elif "TOO_MANY_REQUESTS" in response.text:
-                        self.session.logger.error("Error Confirmation [Exclusive]")
-                        time.sleep(getRetryDelay())
-                        continue
-
-                    else:
-                        self.session.logger.success("Succesfully Confirmation [Exclusive]")
-
-                        self.titelbar("carts")
-
-                        return True
+                    self.checkout_id = response.text.split("checkoutId&quot;:&quot;")[1].split("&quot;,")[0]
+                    self.eTag = response.text.split("eTag&quot;:&quot;\&quot;")[1].split("\&quot;&quot;,")[0]
                 except:
-                    self.session.logger.error("Error Confirmation [Exclusive]")
+                    self.session.logger.error("Error Scraping Checkout Data")
                     time.sleep(getRetryDelay())
                     continue
+
+                try:
+                    self.product_name = response.text.split(";,&quot;name&quot;:&quot;")[1].split("&quot;,&quot;brandName&quot;:")[0]
+                except:
+                    self.product_name = "Unknown"
+                                
+                try:
+                    self.product_image = response.text.split("imageUrl&quot;:&quot;")[1].split("?imwidth=")[0]
+                except:
+                    self.product_image = "https://mosaic02.ztat.net/nvt/z-header-fragment/zalando-logo/logo_default.svg"                    
+                
+                break
 
     def exclusiveBuyNow(self):
         self.session.logger.warn("Buy-Now [Exclusive]")
@@ -1065,10 +1063,11 @@ class ZALANDO(object):
         }
 
         payload = [{
-            "checkoutId": checkoutId, # Il faut les récupéré normalment le Etag et le checkoutId est dans la réponse de la requête "/exclusive/checkout/confirm"
-            "eTag": eTag # Voila comment les Récup : checkoutId = e.split("checkoutId&quot;:&quot;")[1].split("&quot")[0];
+            "checkoutId": self.checkout_id, # Il faut les récupéré normalment le Etag et le checkoutId est dans la réponse de la requête "/exclusive/checkout/confirm"
+            "eTag": self.eTag # Voila comment les Récup : checkoutId = e.split("checkoutId&quot;:&quot;")[1].split("&quot")[0];
             # eTag = e.split("eTag&quot;:&quot;\\&quot;")[1].split('\\')[0];
-            # It's inside the html code given by the "/exclusive/checkout/confirm" request
+            # It's inside the html code given by the "/exclusive/checkout/confirm" request 
+            # It's Done V
         }]
 
         while True:
@@ -1094,7 +1093,7 @@ class ZALANDO(object):
                     else:
                         self.session.logger.success("Succesfully Bought [Exclusive]")
 
-                        print(response.content) #We are supposed to get the paypal link here
+                        print(response.text) #We are supposed to get the paypal link here
                         self.titelbar("carts")
 
                         return True
