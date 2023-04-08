@@ -107,22 +107,21 @@ class ZALANDO(object):
         self.prepare()
         self.login()
         self.initialise()
-        self.preload()
-        self.handle_checkout()
         self.monitor()
-        self.cart()
 
         if bool(self.items):
             for item in self.items:
                 self.clear_cart(item)
         
-        if self.task["EXCLUSIVE"].strip().lower() in ["true", "yes"]:
-            self.exclusive()
-        else:
-            self.carting()
+        self.exclusiveCarting()
+        self.exclusiveConfirm()
+        self.exclusiveBuyNow()
+        #if self.task["EXCLUSIVE"].strip().lower() in ["true", "yes"]:
+        #else:
+        #    self.carting()
 
-        self.scrape_checkout_data()
-        self.order()
+        #self.scrape_checkout_data()
+        #self.order()
         
         sys.exit()
 
